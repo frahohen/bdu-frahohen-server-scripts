@@ -22,3 +22,9 @@ echo ${SOURCE_COMMAND}
 
 SOURCE_COMMAND=$(source ${FILE_UTILS} replace_file root root 644 ./install_ssh_server/resources/etc/ssh/sshd_config /etc/ssh/sshd_config)
 echo ${SOURCE_COMMAND}
+
+bash "${LOGGER}" info "${SSHSERVER} Restart SSH server"
+systemctl stop sshd
+systemctl stop ssh
+systemctl start ssh
+systemctl start sshd
