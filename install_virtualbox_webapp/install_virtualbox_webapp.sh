@@ -83,7 +83,6 @@ cp -f ./install_virtualbox_webapp/etc/nginx/sites-available/phpvirtualbox-webgui
 rm -f /etc/php/7.4/fpm/pool.d/phpvirtualbox-webgui.conf
 cp -f ./install_virtualbox_webapp/etc/php/7.4/fpm/pool.d/phpvirtualbox-webgui.conf /etc/php/7.4/fpm/pool.d/
 ln -s /etc/nginx/sites-available/phpvirtualbox-webgui /etc/nginx/sites-enabled
-usermod -a -G www-data nginx
 chown -R www-data /var/www/html
 chown -R www-data /var/www/phpvirtualbox
 systemctl restart nginx
