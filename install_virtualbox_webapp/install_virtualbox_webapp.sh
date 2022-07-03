@@ -60,13 +60,17 @@ unzip develop.zip
 mv phpvirtualbox-develop phpvirtualbox
 cp -f ./install_virtualbox_webapp/phpvirtualbox/config.php ./phpvirtualbox/
 
-bash "${LOGGER}" info "${VIRTUALBOXWEBAPP} Move folder phpvirtualbox and apply access"
+bash "${LOGGER}" info "${VIRTUALBOXWEBAPP} Move folder phpvirtualbox, apply access and configure autostart"
 rm -rf /var/www/phpvirtualbox/
 mv -f phpvirtualbox /var/www/
 chown -R 998:996 /var/www/phpvirtualbox
 chmod -R 755 /var/www/phpvirtualbox/
 rm -f /etc/default/virtualbox
-echo "VBOXWEB_USER=vbox" >> /etc/default/virtualbox
+cp -f ./install_virtualbox_webapp/etc/default/virtualbox /etc/default/
+rm -f /etc/vbox/autostart.cfg
+cp -f ./install_virtualbox_webapp/etc/vbox/autostart.cfg /etc/vbox/
+chgrp vboxusers /etc/vbox
+chmod 1775 /etc/vbox
 
 bash "${LOGGER}" info "${VIRTUALBOXWEBAPP} Restart vbox services"
 systemctl restart vboxdrv
