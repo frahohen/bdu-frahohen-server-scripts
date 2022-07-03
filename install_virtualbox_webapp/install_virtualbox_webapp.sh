@@ -36,9 +36,9 @@ bash "${LOGGER}" info "${SSHSERVER} Install virtualbox extensions pack"
 expect ./install_virtualbox_webapp/expect_virtualbox_extension.sh ${LatestVirtualBoxVersion}
 
 bash "${LOGGER}" info "${VIRTUALBOXWEBAPP} Add a user which will be used for phpvirtualbox configuration later"
-adduser vbox
-VboxUserPassword="vbox"
-expect ./install_virtualbox_webapp/expect_passwd_vbox.sh ${VboxUserPassword}
+VboxUser="vbox"
+VboxPassword="vbox"
+expect ./install_virtualbox_webapp/expect_adduser.sh ${VboxUser} ${VboxPassword}
 usermod -aG vboxusers vbox
 systemctl status vboxdrv
 
@@ -72,9 +72,10 @@ bash "${LOGGER}" info "${VIRTUALBOXWEBAPP} Restart vbox services"
 systemctl restart vboxdrv
 systemctl restart vboxweb-service
 
-bash "${LOGGER}" info "${VIRTUALBOXWEBAPP} Create user for nginx"
-NginxUserPassword="phpvirtualbox"
-expect ./install_virtualbox_webapp/expect_adduser_nginx.sh ${NginxUserPassword}
+bash "${LOGGER}" info "${VIRTUALBOXWEBAPP} Create user for webgui"
+WebGUIUser="phpvirtualbox-webgui"
+WebGUIPassword="phpvirtualbox"
+expect ./install_virtualbox_webapp/expect_adduser.sh ${WebGUIUser} ${WebGUIPassword}
 
 bash "${LOGGER}" info "${VIRTUALBOXWEBAPP} Copy configuration for nginx/php, apply access and restart services"
 rm -f /etc/nginx/sites-available/phpvirtualbox-webgui 

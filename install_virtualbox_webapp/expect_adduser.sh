@@ -1,8 +1,9 @@
 #!/usr/bin/expect
 
-set password [lindex $argv 0]
+set user [lindex $argv 0]
+set password [lindex $argv 1]
 
-spawn su root -c "adduser phpvirtualbox-webgui"
+spawn su root -c "adduser $user"
  
 expect "Geben Sie ein neues Passwort ein:"
 send "$password\n"
@@ -11,7 +12,7 @@ expect "Geben Sie das neue Passwort erneut ein:"
 send "$password\n"
 
 expect "Vollständiger Name []:"
-send "phpvirtualbox-webgui\n"
+send "$user\n"
 
 expect "Zimmernummer []:"
 send "\n"
