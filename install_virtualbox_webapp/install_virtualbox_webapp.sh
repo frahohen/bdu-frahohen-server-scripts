@@ -30,7 +30,7 @@ LatestVirtualBoxVersion=$(wget -qO - http://download.virtualbox.org/virtualbox/L
 https://www.virtualbox.org/download/hashes/${LatestVirtualBoxVersion}/SHA256SUMS
 
 bash "${LOGGER}" info "${SSHSERVER} Install expect if not already installed"
-apt-get -y install expect
+apt-get install -y expect
 
 bash "${LOGGER}" info "${SSHSERVER} Install virtualbox extensions pack"
 expect ./install_virtualbox_webapp/expect_virtualbox_extension.sh ${LatestVirtualBoxVersion}
@@ -43,10 +43,10 @@ usermod -aG vboxusers vbox
 systemctl status vboxdrv
 
 bash "${LOGGER}" info "${VIRTUALBOXWEBAPP} Install prerequisites for nginx"
-sudo apt install curl gnupg2 ca-certificates lsb-release
+sudo apt install -y curl gnupg2 ca-certificates lsb-release
 
 bash "${LOGGER}" info "${VIRTUALBOXWEBAPP} Install nginx"
-apt install nginx -y
+apt install -y nginx
 systemctl enable nginx
 ufw allow 'Nginx Full'
 
