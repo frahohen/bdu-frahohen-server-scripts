@@ -7,6 +7,7 @@ bash "${LOGGER}" info "Execute frahohen-server setup"
 # TODO: install ssh server
 su root ./install_ssh_server/install_ssh_server.sh
 # TODO: install x2go or vnc
+su root ./install_x2go_server/install_x2go_server.sh
 # TODO: install samba server for network file transfer
 # TODO: install syncTracor required for securing/synching data on my pc  
 # TODO: install virtualbox and phpvirtualbox

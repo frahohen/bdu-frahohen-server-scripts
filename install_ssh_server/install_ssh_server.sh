@@ -28,3 +28,4 @@ systemctl stop sshd
 systemctl stop ssh
 systemctl start ssh
 systemctl start sshd
+systemctl enable sshd
