@@ -8,10 +8,10 @@ SSHSERVER="SSH Server -"
 export DEBIAN_FRONTEND=readline
 
 bash "${LOGGER}" info "${SSHSERVER} Re-index and fetch all available packages"
-apt-get update -y
+apt update -y
 
 bash "${LOGGER}" info "${SSHSERVER} Install expect if not already installed"
-apt-get -y install expect
+apt -y install expect
 
 bash "${LOGGER}" info "${SSHSERVER} Install SSH server"
 # if files in /etc/pam.d/ are already modified execute expect

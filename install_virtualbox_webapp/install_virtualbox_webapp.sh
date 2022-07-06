@@ -17,7 +17,7 @@ echo "#VirtualBox repository" >> "${FILE_SOURCE_LIST}"
 echo "${REPO_VIRTUALBOX}" | tee "${FILE_SOURCE_LIST}" > /dev/null
 
 bash "${LOGGER}" info "${VIRTUALBOXWEBAPP} Re-index and fetch all available packages"
-apt-get update -y
+apt update -y
 
 bash "${LOGGER}" info "${VIRTUALBOXWEBAPP} Install linux headers"
 apt install linux-headers-$(uname -r) dkms
@@ -30,7 +30,7 @@ LatestVirtualBoxVersion=$(wget -qO - http://download.virtualbox.org/virtualbox/L
 https://www.virtualbox.org/download/hashes/${LatestVirtualBoxVersion}/SHA256SUMS
 
 bash "${LOGGER}" info "${SSHSERVER} Install expect if not already installed"
-apt-get install -y expect
+apt install -y expect
 
 bash "${LOGGER}" info "${SSHSERVER} Install virtualbox extensions pack"
 expect ./install_virtualbox_webapp/expect_virtualbox_extension.sh ${LatestVirtualBoxVersion}
@@ -43,7 +43,7 @@ usermod -aG vboxusers vbox
 systemctl status vboxdrv
 
 bash "${LOGGER}" info "${VIRTUALBOXWEBAPP} Install prerequisites for nginx"
-sudo apt install -y curl gnupg2 ca-certificates lsb-release
+apt install -y curl gnupg2 ca-certificates lsb-release
 
 bash "${LOGGER}" info "${VIRTUALBOXWEBAPP} Install nginx"
 apt install -y nginx
@@ -91,7 +91,3 @@ chown -R www-data /var/www/html
 chown -R www-data /var/www/phpvirtualbox
 systemctl restart nginx
 systemctl restart php7.4-fpm
-
-
-
-
