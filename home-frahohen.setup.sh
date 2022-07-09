@@ -2,7 +2,6 @@
 # General
 FILE_UTILS="./utils/file_utils.sh"
 LOGGER=$(source ${FILE_UTILS} get_absolute_path "" /utils/print_log.sh)
-SET_HOSTNAME=$(source ${FILE_UTILS} get_absolute_path "" /utils/set_hostname.sh)
 
 bash "${LOGGER}" info "Execute home-frahohen setup"
 su root ./install_ssh_server/home-frahohen.install_ssh_server.sh
