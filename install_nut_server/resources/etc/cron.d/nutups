@@ -1,0 +1,2 @@
+# check nut ups driver and force reload if failure
+*/5 *     * * *     root  upsc eaton3s ups.status > /dev/null 2>&1; if [ $? != 0 ]; then echo "UPS driver connection failed, trying restart..." >&2; systemctl restart nut-driver; fi 

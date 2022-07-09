@@ -58,7 +58,7 @@ apt install unzip
 wget "https://github.com/phpvirtualbox/phpvirtualbox/archive/develop.zip"
 unzip develop.zip
 mv phpvirtualbox-develop phpvirtualbox
-cp -f ./install_virtualbox_webapp/phpvirtualbox/config.php ./phpvirtualbox/
+cp -f ./install_virtualbox_webapp/resources/phpvirtualbox/config.php ./phpvirtualbox/
 
 bash "${LOGGER}" info "${VIRTUALBOXWEBAPP} Move folder phpvirtualbox, apply access and configure autostart"
 rm -rf /var/www/phpvirtualbox/
@@ -66,9 +66,9 @@ mv -f phpvirtualbox /var/www/
 chown -R 998:996 /var/www/phpvirtualbox
 chmod -R 755 /var/www/phpvirtualbox/
 rm -f /etc/default/virtualbox
-cp -f ./install_virtualbox_webapp/etc/default/virtualbox /etc/default/
+cp -f ./install_virtualbox_webapp/resources/etc/default/virtualbox /etc/default/
 rm -f /etc/vbox/autostart.cfg
-cp -f ./install_virtualbox_webapp/etc/vbox/autostart.cfg /etc/vbox/
+cp -f ./install_virtualbox_webapp/resources/etc/vbox/autostart.cfg /etc/vbox/
 chgrp vboxusers /etc/vbox
 chmod 1775 /etc/vbox
 
@@ -83,9 +83,9 @@ expect ./install_virtualbox_webapp/expect_adduser.sh ${WebGUIUser} ${WebGUIPassw
 
 bash "${LOGGER}" info "${VIRTUALBOXWEBAPP} Copy configuration for nginx/php, apply access and restart services"
 rm -f /etc/nginx/sites-available/phpvirtualbox-webgui 
-cp -f ./install_virtualbox_webapp/etc/nginx/sites-available/phpvirtualbox-webgui /etc/nginx/sites-available/
+cp -f ./install_virtualbox_webapp/resources/etc/nginx/sites-available/phpvirtualbox-webgui /etc/nginx/sites-available/
 rm -f /etc/php/7.4/fpm/pool.d/phpvirtualbox-webgui.conf
-cp -f ./install_virtualbox_webapp/etc/php/7.4/fpm/pool.d/phpvirtualbox-webgui.conf /etc/php/7.4/fpm/pool.d/
+cp -f ./install_virtualbox_webapp/resources/etc/php/7.4/fpm/pool.d/phpvirtualbox-webgui.conf /etc/php/7.4/fpm/pool.d/
 ln -s /etc/nginx/sites-available/phpvirtualbox-webgui /etc/nginx/sites-enabled
 chown -R www-data /var/www/html
 chown -R www-data /var/www/phpvirtualbox

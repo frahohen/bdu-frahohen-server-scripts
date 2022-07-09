@@ -29,7 +29,7 @@ syncthing --version
 
 bash "${LOGGER}" info "${SYNCTHING} Configure syncthing service"
 rm -f /etc/systemd/system/syncthing@.service
-cp -f ./install_syncthing/etc/systemd/system/syncthing@.service /etc/systemd/system/
+cp -f ./install_syncthing/resources/etc/systemd/system/syncthing@.service /etc/systemd/system/
 
 bash "${LOGGER}" info "${SYNCTHING} Reload systemd deamon and syncthing service"
 systemctl daemon-reload

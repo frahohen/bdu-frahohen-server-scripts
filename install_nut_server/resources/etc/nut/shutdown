@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# UPS didn't shutdown, so we wrote this script
+
+upsdrvctl stop
+upsdrvctl shutdown
+
+poweroff
