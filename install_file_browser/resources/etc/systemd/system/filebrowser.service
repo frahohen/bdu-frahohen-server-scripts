@@ -2,12 +2,6 @@
 Description=File Browser
 After=network.target
 [Service]
-ExecStart=/usr/local/bin/filebrowser -p 20080 -a $(ip addr | awk '
-/^[0-9]+:/ { 
-  sub(/:/,"",$2); iface=$2 } 
-/^[[:space:]]*inet / { 
-  split($2, a, "/")
-  print iface" : "a[1] 
-}' | grep eth0 | awk -F "eth0 : " '{print $2}') -r /media/frahohen/data-001-4tb/data/
+ExecStart=/usr/local/bin/filebrowser -p 20080 -a "$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)" -r /media/frahohen/data-001-4tb/data/
 [Install]
 WantedBy=multi-user.target
