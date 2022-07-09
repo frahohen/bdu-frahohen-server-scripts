@@ -17,10 +17,10 @@ bash "${LOGGER}" info "${SSHSERVER} Install SSH server"
 # if files in /etc/pam.d/ are already modified execute expect
 expect ./install_ssh_server/expect_openssh_server.sh
 
-SOURCE_COMMAND=$(source ${FILE_UTILS} replace_file root root 644 ./install_ssh_server/resources/server.frahohen/etc/ssh/ssh_config /etc/ssh/ssh_config)
+SOURCE_COMMAND=$(source ${FILE_UTILS} replace_file root root 644 ./install_ssh_server/resources/home-frahohen/etc/ssh/ssh_config /etc/ssh/ssh_config)
 echo ${SOURCE_COMMAND}
 
-SOURCE_COMMAND=$(source ${FILE_UTILS} replace_file root root 644 ./install_ssh_server/resources/server.frahohen/etc/ssh/sshd_config /etc/ssh/sshd_config)
+SOURCE_COMMAND=$(source ${FILE_UTILS} replace_file root root 644 ./install_ssh_server/resources/home-frahohen/etc/ssh/sshd_config /etc/ssh/sshd_config)
 echo ${SOURCE_COMMAND}
 
 bash "${LOGGER}" info "${SSHSERVER} Restart SSH server"
