@@ -1,0 +1,7 @@
+[Unit]
+Description=File Browser
+After=network.target
+[Service]
+ExecStart=/usr/local/bin/filebrowser -p 20080 -r /media/frahohen/data-001-4tb/data/
+[Install]
+WantedBy=multi-user.target

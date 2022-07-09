@@ -9,6 +9,7 @@ su root ./install_x2go_server/install_x2go_server.sh
 su root ./install_syncthing/install_syncthing.sh
 su root ./install_virtualbox_webapp/install_virtualbox_webapp.sh
 su root ./install_nut_server/install_nut_server.sh
+su root ./install_file_browser/install_file_browser.sh
 su root ./utils/set_hostname.sh server-frahohen
 bash "${LOGGER}" info "Setup for server-frahohen complete"
 
