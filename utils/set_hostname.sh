@@ -14,8 +14,8 @@ bash "${LOGGER}" info "${SET_HOSTNAME} Configure hostname in /etc/hosts"
 sudo sed '/127.0.0.1/d' /etc/hosts
 
 # add at the beginning of the file localhost and hostname
-sed -i '1s/^/127.0.0.1       ${HOSTNAME}\n/' file
-sed -i '1s/^/127.0.0.1       localhost\n/' file
+sed -i '1s/^/127.0.0.1       ${HOSTNAME}\n/' /etc/hosts
+sed -i '1s/^/127.0.0.1       localhost\n/' /etc/hosts
 
 bash "${LOGGER}" info "${SET_HOSTNAME} Apply hostname configuration"
 invoke-rc.d hostname.sh start
