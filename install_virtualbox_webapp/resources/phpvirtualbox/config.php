@@ -13,7 +13,7 @@ var $username = 'vbox';
 var $password = 'vbox';
 
 /* SOAP URL of vboxwebsrv (not phpVirtualBox's URL) */
-var $location = 'http://127.0.0.1:28083/';
+var $location = 'http://127.0.0.1:18083/';
 
 /* Default language. See languages folder for more language options.
  * Can also be changed in File -> Preferences -> Language in
