@@ -13,5 +13,8 @@ curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bas
 bash "${LOGGER}" info "${FILEBROWSER} Create service and start File Browser"
 rm -f /etc/systemd/system/filebrowser.service
 cp -f ./install_file_browser/resources/etc/systemd/system/filebrowser.service /etc/systemd/system/
-systemctl enable filebrowser.service
-systemctl start filebrowser.service
+rm -f /etc/systemd/system/filebrowser.timer
+cp -f ./install_file_browser/resources/etc/systemd/system/filebrowser.timer /etc/systemd/system/
+systemctl deamon-reload
+systemctl enable filebrowser.timer
+systemctl start filebrowser.timer
