@@ -13,7 +13,7 @@ var $username = 'vbox';
 var $password = 'vbox';
 
 /* SOAP URL of vboxwebsrv (not phpVirtualBox's URL) */
-var $location = 'http://127.0.0.1:18083/';
+var $location = 'http://127.0.0.1:28083/';
 
 /* Default language. See languages folder for more language options.
  * Can also be changed in File -> Preferences -> Language in
@@ -22,7 +22,7 @@ var $location = 'http://127.0.0.1:18083/';
 var $language = 'en';
 
 /* Set the standard VRDE Port Number / Range, e.g. 1010-1020 or 1027 */
-var $vrdeports = '9000-9100';
+var $vrdeports = '29000-29100';
 /* Set the default VRDE address, e.g. 192.168.1.1 */
 #var $vrdeaddress = '192.168.1.1';
 
