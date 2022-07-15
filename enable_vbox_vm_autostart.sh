@@ -26,7 +26,7 @@ VM_ID=$(VBoxManage list vms | grep -F "${VM_NAME}" | grep -o -P '(?<={).*(?=})')
 bash "${LOGGER}" info "${VBOX_VM_AUTOSTART} Autostart will be set for '${VM_NAME}' with id '${VM_ID}'"
 VBoxManage setproperty autostartdbpath /etc/vbox
 VBoxManage modifyvm ${VM_ID} --autostart-enabled on --autostart-delay 120
-VBoxManage modifyvm ${VM_ID} --autostop-type acpishutdown
+VBoxManage modifyvm ${VM_ID} --autostop-type poweroff
 
 bash "${LOGGER}" info "${VBOX_VM_AUTOSTART} Restart vboxautostart-service"
 sudo -i -u root service vboxautostart-service restart
