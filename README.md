@@ -33,6 +33,13 @@ cd bdu-frahohen-server-scripts
 su root ./home-frahohen.setup.sh
 ```
 
+# Enable autostart for VMs
+The script _enable_vbox_vm_autostart.sh_  can configure a VM to shut down and restart automatically after the host machine was restarted. The delay before the VM restarts is set to 120 seconds. This can be changed within this script to the required delay time. To apply the autostart configuration to a VM, execute the following command:
+
+```
+su vbox ./enable_vbox_vm_autostart.sh
+```
+
 # Requirements
 
 * MX-21.1_ahs_x64.iso
