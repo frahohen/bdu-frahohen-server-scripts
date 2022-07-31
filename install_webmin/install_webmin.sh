@@ -41,4 +41,5 @@ apt install -y webmin
 
 bash "${LOGGER}" info "${WEBMIN} Change port and restart webmin"
 sed -i 's/port=10000/port=20000/' /etc/webmin/miniserv.conf 
+systemctl daemon-reload
 systemctl restart webmin

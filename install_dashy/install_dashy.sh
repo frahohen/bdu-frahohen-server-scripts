@@ -46,5 +46,6 @@ yarn
 yarn build
 
 bash "${LOGGER}" info "${DASHY} Start dashy"
+systemctl daemon-reload
 systemctl enable dashy.timer
 systemctl start dashy.timer

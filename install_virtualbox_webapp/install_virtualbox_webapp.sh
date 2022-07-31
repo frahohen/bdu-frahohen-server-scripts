@@ -73,6 +73,7 @@ chgrp vboxusers /etc/vbox
 chmod 1775 /etc/vbox
 
 bash "${LOGGER}" info "${VIRTUALBOXWEBAPP} Restart vbox services"
+systemctl daemon-reload
 systemctl restart vboxdrv
 systemctl restart vboxweb-service
 
@@ -89,5 +90,6 @@ cp -f ./install_virtualbox_webapp/resources/etc/php/7.4/fpm/pool.d/phpvirtualbox
 ln -s /etc/nginx/sites-available/phpvirtualbox-webgui /etc/nginx/sites-enabled
 chown -R www-data /var/www/html
 chown -R www-data /var/www/phpvirtualbox
+systemctl daemon-reload
 systemctl restart nginx
 systemctl restart php7.4-fpm

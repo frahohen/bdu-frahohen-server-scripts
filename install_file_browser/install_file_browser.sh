@@ -15,5 +15,6 @@ rm -f /etc/systemd/system/filebrowser.service
 cp -f ./install_file_browser/resources/etc/systemd/system/filebrowser.service /etc/systemd/system/
 rm -f /etc/systemd/system/filebrowser.timer
 cp -f ./install_file_browser/resources/etc/systemd/system/filebrowser.timer /etc/systemd/system/
+systemctl daemon-reload
 systemctl enable filebrowser.timer
 systemctl start filebrowser.timer

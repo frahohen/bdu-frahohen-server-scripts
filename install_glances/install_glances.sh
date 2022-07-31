@@ -14,5 +14,6 @@ pip3 install --user 'glances[web,ip]'
 bash "${LOGGER}" info "${GLANCES} Create service and start glances"
 rm -f /etc/systemd/system/glances.service
 cp -f ./install_glances/resources/etc/systemd/system/glances.service /etc/systemd/system/
+systemctl daemon-reload
 systemctl enable glances.service
 systemctl start glances.service

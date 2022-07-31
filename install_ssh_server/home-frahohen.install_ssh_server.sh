@@ -26,6 +26,7 @@ echo ${SOURCE_COMMAND}
 bash "${LOGGER}" info "${SSHSERVER} Restart SSH server"
 systemctl stop sshd
 systemctl stop ssh
+systemctl daemon-reload
 systemctl start ssh
 systemctl start sshd
 systemctl enable sshd

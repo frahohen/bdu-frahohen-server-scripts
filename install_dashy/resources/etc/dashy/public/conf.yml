@@ -98,12 +98,6 @@ sections:
         url: http://server-frahohen:28384/
         target: newtab
         id: 5_1307_syncthing
-      - title: Glances
-        description: Access to system monitoring
-        icon: mdi-resistor
-        url: http://server-frahohen:21209/
-        target: newtab
-        id: 6_1307_glances
     displayData:
       sortBy: default
       rows: 1

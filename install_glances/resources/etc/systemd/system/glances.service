@@ -5,7 +5,7 @@ After=network.target
 [Service]
 User=root
 Group=root
-ExecStart=/root/.local/bin/glances -w -p 21209 --enable-plugin sensors
+ExecStart=/root/.local/bin/glances -w -p 21209 --disable-webui --enable-plugin sensors
 Restart=on-abort
 RemainAfterExit=yes
 
