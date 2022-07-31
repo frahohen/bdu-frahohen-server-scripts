@@ -10,6 +10,9 @@ Currently included:
 * PHPVirtualbox
 * Syncthing
 * FileBrowser
+* Webmin
+* Glances
+* Dashy
 
 # How to install
 
