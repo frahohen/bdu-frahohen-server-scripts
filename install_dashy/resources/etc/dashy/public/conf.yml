@@ -58,7 +58,7 @@ sections:
       - type: public-holidays
         options:
           country: AUT
-          holidayType: public_holiday
+          holidayType: all
           monthsToShow: 24
         id: 0_1307_publicholidays
     items:
