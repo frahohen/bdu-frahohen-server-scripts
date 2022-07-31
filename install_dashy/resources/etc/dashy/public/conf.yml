@@ -55,6 +55,18 @@ sections:
   - name: '[Maintenance]'
     icon: mdi-hammer-screwdriver
     items:
+      - title: Magenta
+        description: Access to Magenta admin panel
+        icon: mdi-router-wireless-settings
+        url: http://router-magenta/
+        target: newtab
+        id: 6_1307_magenta
+      - title: EdgeRouter X
+        description: Access to EdgeRouter X admin panel
+        icon: mdi-router-network
+        url: https://router-frahohen/
+        target: newtab
+        id: 5_1307_edgerouterx
       - title: Webmin
         description: Web access to system administration
         icon: mdi-cog

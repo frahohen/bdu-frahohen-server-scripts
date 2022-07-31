@@ -10,10 +10,22 @@ bash "${LOGGER}" info "${SET_HOSTNAME} Configure hostname in /etc/hostname"
 hostnamectl set-hostname ${HOSTNAME}
 
 bash "${LOGGER}" info "${SET_HOSTNAME} Configure hostname in /etc/hosts"
-# remove lines with localhost and hostname
+# remove lines that contain the following entries
+#   localhost
+#   hostname
+#   router-frahohen
+#   router-magenta
 sed -i '/127.0.0.1/d' /etc/hosts
+sed -i '/192.168.1.1/d' /etc/hosts
+sed -i '/192.168.0.1/d' /etc/hosts
 
-# add at the beginning of the file localhost and hostname
+# add the entries in the following order:
+#   localhost
+#   hostname
+#   router-frahohen
+#   router-magenta
+sed -i "1s/^/192.168.0.1     router-magenta\n/" /etc/hosts
+sed -i "1s/^/192.168.1.1     router-frahohen\n/" /etc/hosts
 sed -i "1s/^/127.0.0.1       $HOSTNAME\n/" /etc/hosts
 sed -i "1s/^/127.0.0.1       localhost\n/" /etc/hosts
 
