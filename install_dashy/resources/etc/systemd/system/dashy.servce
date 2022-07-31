@@ -1,0 +1,17 @@
+[Unit]
+Description=Dashy
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/usr/bin/yarn start-modified
+WorkingDirectory=/etc/dashy
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=log_dashy
+Restart=always
+KillSignal=SIGQUIT
+
+[Install]
+WantedBy=multi-user.target

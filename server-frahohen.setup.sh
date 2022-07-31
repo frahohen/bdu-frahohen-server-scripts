@@ -10,6 +10,9 @@ su root ./install_syncthing/install_syncthing.sh
 su root ./install_virtualbox_webapp/install_virtualbox_webapp.sh
 su root ./install_nut_server/install_nut_server.sh
 su root ./install_file_browser/install_file_browser.sh
+su root ./install_webmin/install_webmin.sh
+su root ./install_glances/install_glances.sh
+su root ./install_dashy/install_dashy.sh
 su root ./utils/set_hostname.sh server-frahohen
 su root ./utils/set_mount_points.sh
 bash "${LOGGER}" info "Setup for server-frahohen complete"
