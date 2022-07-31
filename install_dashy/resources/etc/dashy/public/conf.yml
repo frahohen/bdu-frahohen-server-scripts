@@ -54,49 +54,56 @@ appConfig:
 sections:
   - name: '[Maintenance]'
     icon: mdi-hammer-screwdriver
+    widgets:
+      - type: public-holidays
+        options:
+          country: AUT
+          holidayType: public_holiday
+          monthsToShow: 24
+        id: 0_1307_publicholidays
     items:
       - title: Magenta
         description: Access to Magenta admin panel
         icon: mdi-router-wireless-settings
         url: http://router-magenta/
         target: newtab
-        id: 6_1307_magenta
+        id: 0_1307_magenta
       - title: EdgeRouter X
         description: Access to EdgeRouter X admin panel
         icon: mdi-router-network
         url: https://router-frahohen/
         target: newtab
-        id: 5_1307_edgerouterx
+        id: 1_1307_edgerouterx
       - title: Webmin
         description: Web access to system administration
         icon: mdi-cog
         url: https://server-frahohen:20000/
         target: newtab
-        id: 0_1307_webmin
+        id: 2_1307_webmin
       - title: Virtual Box
         description: Access to virtual machines
         icon: mdi-monitor-multiple
         url: http://server-frahohen:28080/
         target: newtab
-        id: 1_1307_virtualbox
+        id: 3_1307_virtualbox
       - title: File Browser
         description: Access to [data-001-4tb] storage
         icon: mdi-file-search
         url: http://server-frahohen:20080/
         target: newtab
-        id: 2_1307_filebrowser
+        id: 4_1307_filebrowser
       - title: Syncthing
         description: Access to synched [Source] folder
         icon: mdi-sync-circle
         url: http://server-frahohen:28384/
         target: newtab
-        id: 3_1307_syncthing
+        id: 5_1307_syncthing
       - title: Glances
         description: Access to system monitoring
         icon: mdi-resistor
         url: http://server-frahohen:21209/
         target: newtab
-        id: 4_1307_glances
+        id: 6_1307_glances
     displayData:
       sortBy: default
       rows: 1
