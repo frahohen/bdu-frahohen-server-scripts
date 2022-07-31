@@ -152,8 +152,8 @@ sections:
     widgets:
       - type: github-trending-repos
         options:
-          limit: 8
-          since: weekly
+          limit: 20
+          since: daily
         id: 0_1025_githubtrendingrepos
     items:
       - title: Google
