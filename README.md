@@ -52,9 +52,9 @@ su vbox ./enable_vbox_vm_autostart.sh
 
 This setup is created for a specific modification of the initial system and was not tested with the stock OS. This setup should only be used on servers that are in a separate local network. 
 
-# Modified OS hint
+# Hint for the modified OS
 
-* Use F4 for the sepcific modification of the OS and enter:
+* Press F4 and enter:
 ```
 minstall
 ```
